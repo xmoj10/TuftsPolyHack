@@ -20,9 +20,9 @@
        // var food_options_two = clean_string(y);
        // var food_options_three = clean_string(z);
 
-       var length_one = x;   //food_options_one.length;
-       var length_two = y;   //food_options_two.length;
-       var length_three = z; //food_options_three.length;
+       var length_one = x.length;   //food_options_one.length;
+       var length_two = y.length;   //food_options_two.length;
+       var length_three = z.length; //food_options_three.length;
 
        var option_one = Math.floor(Math.random() * length_one);
                var option_two = Math.floor(Math.random() * length_two);
@@ -226,7 +226,9 @@ body {
 </head>
 <body>
 
-<div class="logo"><a href="#"><img src ="logo.png"></a></div>
+<div class="logo-wrapper">
+  <div class="logo"><a href="#"><img src ="logo.png"></a></div>
+</div>
 <div class="header">
     <h1>
         <img src="baby jumbo.png" width="150%" height="150%">
@@ -236,9 +238,9 @@ body {
 </div>
 
 <div class="topnav">
-  <a href="http://menus.tufts.edu/foodpro.NET/location.aspx">Favorite Meals</a>
-  <a href="https://dining.tufts.edu/where-to-eat">Dining Halls</a>
-  <a href="google.com">Boston</a>
+  <a href="http://menus.tufts.edu/foodpro.NET/location.aspx">   Favorite Meals  </a>
+  <a href="https://dining.tufts.edu/where-to-eat">  Dining Halls    </a>
+  <a href="https://www.google.com"> Boston  </a>
   <a href="#" style="float:right">Settings</a>
 </div>
 
