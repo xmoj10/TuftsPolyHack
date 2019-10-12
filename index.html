@@ -6,17 +6,26 @@
 
    function onMealChange() {
 
-       var meal = document.getElementById("mealtype").value;
+       updateMealOptions();
 
-       if (meal == "Breakfast") {
-           window.alert("you chose: breakfast");
-       } else if (meal == "Lunch") {
-         window.alert("you chose: lunch");
-       } else if (meal == "Dinner") {
+   }
+
+   function updateMealOptions() {
+     var meal = document.getElementById("mealtype").value;
+
+     if (meal == "Breakfast") {
+         updateMealOptionsHelper(meal);
+     } else if (meal == "Lunch") {
+       window.alert("you chose: lunch");
+     } else if (meal == "Dinner") {
 window.alert("you chose: dinner");
-       } else if (meal == "Late night") {
-         window.alert("you chose: Late night");
-       }
+     } else if (meal == "Late night") {
+       window.alert("you chose: Late night");
+     }
+
+   }
+
+   function updateMealOptionsHelper(meal) {
 
    }
 
@@ -184,7 +193,7 @@ body {
 </style>
 </head>
 
-<body class="all-header">
+<body class="all-header" onload="updateMealOptions()">
 <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
@@ -217,17 +226,19 @@ var firebaseConfig = {
 <div class="all-header">
     <div align="center" font-size="15px">
         <a href="#"> <img src ="logo.png" width="35%" height="35%"> </img> </a>
-            <h2> <img src="baby jumbo.png" width="130px" height="130px" margin="right"> </img>
+            <h2 vertical-align="texttop">
+            <img src="baby jumbo.png" width="130px" height="130px" margin="right"> </img>
             Get notified about your meals!
-            <img src="flip baby jumbo.png" width="130px" height="130px" margin="left"> </img> </h2>
+            <img src="flip baby jumbo.png" width="130px" height="130px" margin="left"> </img>
+        </h2>
     </div>
 </div>
 
 <div class="topnav">
-  <a href="http://menus.tufts.edu/foodpro.NET/location.aspx">   Favorite Meals  </a>
-  <a href="https://dining.tufts.edu/where-to-eat">  Dining Halls    </a>
-  <a href="https://www.google.com"> Local Meals  </a>
-  <a href="#" style="float:right">Settings</a>
+  <b><a href="http://menus.tufts.edu/foodpro.NET/location.aspx">   Favorite Meals  </a></b>
+  <b><a href="https://dining.tufts.edu/where-to-eat">  Dining Halls    </a></b>
+  <b><a href="https://www.google.com"> Local Meals  </a></b>
+  <b><a href="#" style="float:right">Settings</a></b>
 </div>
 
 <!-- this is for under the logo area -->
@@ -237,7 +248,7 @@ var firebaseConfig = {
             <div class="card">
                 <h2>Choose your favorite foods</h2>
                 <h5>Choose a meal!</h5>
-                <select id="mealtype" onchange="onMealChange()">
+                <select id="mealtype" onchange="onMealChange(); udpateMealOptions()">
                     <option value="Breakfast">Breakfast</option>
                     <option value="Lunch">Lunch</option>
                     <option value="Dinner">Dinner</option>
@@ -251,7 +262,7 @@ var firebaseConfig = {
               <h2>Local Bites</h2>
               <h5>Here's a couple of local bites you should check out:</h5>
 
-            <div class = "fakeimg">
+            <div class ="fakeimg">
               <a href="https://www.bostonburgercompany.com/">
                   <img src="420 burger.png" style="height: 150px; width: 150px;"> </img>
               </a>
@@ -292,13 +303,14 @@ var firebaseConfig = {
         align-items: center; padding-top: 25px; padding-bottom: 25px; background-color: gray">
           <div style="margin-bottom:20px;"> -->
           <div class="card">
-            <h1 style="text-align: center">
-                Feeling Lucky?
-            </h1>
-            <p style="text-align: center; font-size:15px; padding-left: 7px; padding-right: 7px">
+            <h1>Feeling Lucky?</h1>
+            <!-- <p style="text-align: center; font-size:15px; padding-left: 7px; padding-right: 7px"> -->
+            <p style="text-align: center; font-size: 15px">
                 Generate a randomized meal below!</p>
           <!-- </div> -->
-            <button style="margin-bottom:20px; border-radius: 5px; width:150px" onclick="createCombo()">
+            <button style="margin-bottom:20px; border-radius: 5px; width:150px;
+            background-color: #4CAF50; border: none; color: white; padding: 16px 32px;
+            text-decoration: none; cursor: pointer; onclick="createCombo()"">
                 Create a Meal Combo </button>
           <div style="width:90%; background-color: silver">
             <p id="choice_one" style="text-align: center">Drink Here!</p>
