@@ -206,22 +206,30 @@ body {
 </head>
 
 <body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+
 <div class="all-header">
     <div align="center">
-        <!-- <div class="logo"> -->
             <a href="#"> <img src ="logo.png" width="500px" height="250px" align="center"> </img> </a>
-        <!-- </div> -->
     </div>
 
     <div class="subtitle">
         <!-- <div class="left-elephant">-->
-            <img src="baby jumbo.png" width="130px" height="130px" align="center"> </img>
+            <img src="baby jumbo.png" width="130px" height="130px" margin-left="250px"> </img>
         <!--</div>-->
         <div class="sub-heading">
             <h3>Get notified about your meals!</h3>
         </div>
         <!-- <div class="right-elephant">-->
-            <img src="flip baby jumbo.png" width="130px" height="130px" align="center"> </img>
+            <img src="flip baby jumbo.png" width="130px" height="130px" margin-right="250px"> </img>
         <!--</div>-->
     </div>
 </div>
@@ -238,7 +246,7 @@ body {
     <div class="row">
         <div class="leftcolumn">
             <div class="card">
-                <h2>CHOOSE YOUR FAVORITE FOODS</h2>
+                <h2>Choose your favorite foods</h2>
                 <h5>Choose a meal!</h5>
                 <select>
                     <option value="Breakfast">Breakfast</option>
@@ -281,7 +289,7 @@ body {
         <div class="card">
           <h2>ABOUT US</h2>
           <!-- <div class="fakeimg"> -->
-              <img src="us.jpg" style="width: f; height: 200px; align: center;"> </img>
+              <img src="us.jpg" style="width: 200px; height: 200px; align: center;"> </img>
 
           <p>We are struggling college students who understand how it feels to walk into Dewick
               excited about General Gau's only to find out Tufts is only serving homophobia and racism.
