@@ -166,8 +166,8 @@ body {
 .topnav a:before {
   content: "";
   position: absolute;
-  width: 200%;
-  height: 2px;
+  width: 20%;
+  height: 0px;
   bottom: 0;
   left: 0;
   background-color: #8EC5FC;
@@ -260,7 +260,7 @@ body {
 </style>
 </head>
 
-<body class="all-header" onload="updateMealOptions()">
+<body class="all-header" onload= updateMealOptions();>
 <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
@@ -312,7 +312,8 @@ var firebaseConfig = {
 <div>
     <div class="row">
         <div class="leftcolumn">
-            <div class="card" style="float: left; width: 75%">
+            <div class="card">
+                <style="float: left; width: 75%">
                 <h2>
                     Choose your favorite foods
                 </h2>
@@ -328,9 +329,8 @@ var firebaseConfig = {
                 <select id="mealoptions">
                   <option value="Late night">IF YOU CAN SEE THIS THEN THATS NOT GOOD</option>
                 </select>
-            </div>
 
-            <div class="card" style="float: right; width: 25%">
+                <style="float: right; width: 25%">
                 <h2 align="center">
                     User Database
                     <br>
@@ -402,7 +402,7 @@ var firebaseConfig = {
             <p>
                 Generate a randomized meal below!</p>
           <!-- </div> -->
-            <button style="margin-bottom:20px; border-radius: 8px; width:150px;" onclick= "createCombo()" >
+            <button style="margin-bottom:20px; border-radius: 8px; width:150px;" onclick= createCombo(); >
                 Create a Meal Combo
             </button>
           <div style="width:90%; background-color: silver">
