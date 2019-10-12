@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
-    <script>
+<script>
 
    function createCombo() {
-window.alert("function called");
+       window.alert("function called");
            //var food_options = ["pizza", "apple", "cookie", "salad", "rice", "ice cream"];
 
        var x = document.getElementById("form1").value;
@@ -40,7 +38,7 @@ window.alert("3rd element is: " + z);
 
 
    function clean_string(str) {
-       var array[];
+       var array = new Array();
 
        var start = 0;
 
@@ -91,9 +89,9 @@ body {
 
 .center {
   display: block;
-  margin-left: 200px;
+  margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 70%;
 }
 
 .header h1 {
@@ -162,6 +160,38 @@ body {
   clear: both;
 }
 
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/*Input settings*/
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
 /* Footer */
 .footer {
   padding: 20px;
@@ -192,9 +222,9 @@ body {
 
 <div class="header">
     <h1>
-        <img src="baby jumbo.png"> </img>
+        <img src="baby jumbo.png" width="150%" height="150%"> </img>
             Jumbowl
-         <img src="logo.png" alt="logo"> </img>
+         <img src="logo.png" alt="logo" class="center"> </img>
     </h1>
 
   <p>Get Notified About Your Favorite Meals</p>
@@ -245,23 +275,6 @@ body {
 	<br text-align="center">  JumboBowls (C) 2019 </div>
 </div>
 
-
-	<p>First Choice:</p>
-	<input id="form1" type="text" name="firstchoice"><br>
-
-	<p>Second Choice:</p>
-	<input id="form2" type="text" name="secondchoice"><br>
-
-	<p>Third Choice:</p>
-	<input id="form3" type="text" name="thirdchoice">
-
-
-<button onclick="createCombo()"> click to create meal combo </button>
-
-<p id="choice_one">food 1</p>
-<p id="choice_two">food 2</p>
-<p id="choice_three">food 3</p>
 </body>
-
 
 </html>
