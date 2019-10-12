@@ -13,9 +13,9 @@
        // var y = document.getElementById("form2").value;
        // var z = document.getElementById("form3").value;
 
-       var x = "chicken beef";
-       var y = "cake brownie icecream";
-       var z = "applejuice orangejuice water soda"
+       var x = ["water", "apple juice", "soda", "spicy water"];
+       var y = ["chicken", "fish tacos", "beef tacos", "gaus"];
+       var z = ["brownie", "cookie", "cake", "ice cream"];
        // var food_options_one = clean_string(x);
        // var food_options_two = clean_string(y);
        // var food_options_three = clean_string(z);
@@ -34,9 +34,9 @@
                 var option_three = Math.floor(Math.random() * length_three);
          }
 
-           document.getElementById("choice_one").innerHTML = food_options_one[option_one];
-           document.getElementById("choice_two").innerHTML = food_options_two[option_two];
-           document.getElementById("choice_three").innerHTML = food_options_three[option_three];
+           document.getElementById("choice_one").innerHTML = "Drink: " + food_options_one[option_one];
+           document.getElementById("choice_two").innerHTML = "Main entree: " + food_options_two[option_two];
+           document.getElementById("choice_three").innerHTML = "Dessert: " + food_options_three[option_three];
    }
 
 
@@ -226,21 +226,20 @@ body {
 </head>
 <body>
 
-<div class="logo"><a href="#"><img src ="logo.png"></a></div>
 
 <div class="header">
     <h1>
         <img src="baby jumbo.png" width="150%" height="150%">
-        <img src ="logo.png" width="500%" height="150%">
+        <div class="logo"><a href="#"><img src ="logo.png"></a></div>
     </h1>
 
   <p>Get Notified About Your Favorite Meals</p>
 </div>
 
 <div class="topnav">
-  <a href="#">Favorite Meals</a>
-  <a href="#">Dining Halls</a>
-  <a href="#">Boston</a>
+  <a href="http://menus.tufts.edu/foodpro.NET/location.aspx">Favorite Meals</a>
+  <a href="https://dining.tufts.edu/where-to-eat">Dining Halls</a>
+  <a href="google.com">Boston</a>
   <a href="#" style="float:right">Settings</a>
 </div>
 
@@ -280,22 +279,11 @@ body {
     </div>
 
     <div>
-      <!-- <form action="/action_page.php"> -->
-        <label for="form1">First Choice:</label>
-        <input type="text" id="form1" name="firstchoice" placeholder="Your first choice..">
-
-        <label for="form2">Second Choice:</label>
-        <input type="text" id="form2" name="secondchoice" placeholder="Your second choice..">
-
-        <label for="form3">Third Choice:</label>
-        <input type="text" id="form3" name="thirdchoice" placeholder="Your third choice..">
-
         <button onclick="createCombo()"> Create a Meal Combo </button>
-      <!-- </form> -->
 
-        <p id="choice_one">food 1</p>
-        <p id="choice_two">food 2</p>
-        <p id="choice_three">food 3</p>
+        <p id="choice_one">Drink Here!</p>
+        <p id="choice_two">Main Entree Here!</p>
+        <p id="choice_three">Dessert Here!</p>
     </div>
 
     <div class="card">
