@@ -143,7 +143,7 @@ body {
 .topnav {
   overflow: hidden;
   background-color: #333;
-  border-bottom: 0.4px solid transparent;
+  border-bottom: 0.5px solid #8EC5FC;
   transition: border-bottom 0.5s;
 }
 
@@ -159,13 +159,13 @@ body {
 }
 
 /* Change color on hover */
-.topnav:hover {
+.topnav a:hover {
   /* background-color: #ddd; */
-  border-bottom: 0.4px solid #8EC5FC;
+  border-bottom: 0.5px solid #8EC5FC;
   color: #8EC5FC;
 }
 
-.topnav a:hover {
+.topnav a:hover:(.active) {
   background-color: #FA709A;
 }
 
@@ -194,7 +194,8 @@ body {
 .card {
   background-color: white;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 5px;
+  border-radius: 10px;
 }
 
 /* Clear floats after the columns */
@@ -292,7 +293,7 @@ var firebaseConfig = {
             <div class="card">
                 <h2>Choose your favorite foods</h2>
                 <h5>Choose a meal!</h5>
-                <select id="mealtype" onchange="onMealChange(); udpateMealOptions()">
+                <select id="mealtype" onchange="udpateMealOptions()">
                     <option value="Breakfast">Breakfast</option>
                     <option value="Lunch">Lunch</option>
                     <option value="Dinner">Dinner</option>
@@ -303,8 +304,12 @@ var firebaseConfig = {
             </div>
 
             <div class="card">
-              <h2>Local Bites</h2>
-              <h5>Here's a couple of local bites you should check out:</h5>
+              <h2>
+                Local Bites
+              </h2>
+              <h5>
+                  Here's a couple of local bites you should check out:
+              </h5>
 
             <div class ="fakeimg">
               <a href="https://www.bostonburgercompany.com/">
@@ -400,7 +405,7 @@ var firebaseConfig = {
 
 
 
-</div>
+<!-- </div> -->
 
 </body>
 
