@@ -13,16 +13,16 @@
        // var y = document.getElementById("form2").value;
        // var z = document.getElementById("form3").value;
 
-       var x = ["water", "apple juice", "soda", "spicy water"];
-       var y = ["chicken", "fish tacos", "beef tacos", "gaus"];
-       var z = ["brownie", "cookie", "cake", "ice cream"];
+       var food_options_one = ["water", "apple juice", "soda", "spicy water"];
+       var food_options_two = ["chicken", "fish tacos", "beef tacos", "gaus"];
+       var food_options_three = ["brownie", "cookie", "cake", "ice cream"];
        // var food_options_one = clean_string(x);
        // var food_options_two = clean_string(y);
        // var food_options_three = clean_string(z);
 
-       var length_one = x.length;   //food_options_one.length;
-       var length_two = y.length;   //food_options_two.length;
-       var length_three = z.length; //food_options_three.length;
+       var length_one = food_options_one.length;   //food_options_one.length;
+       var length_two = food_options_two.length;   //food_options_two.length;
+       var length_three= food_options_three.length; //food_options_three.length;
 
        var option_one = Math.floor(Math.random() * length_one);
                var option_two = Math.floor(Math.random() * length_two);
@@ -83,9 +83,7 @@ body {
 	text-align: center;
 }
 
-.logo {
-  background-color: #FAACA8;
-  background-image: linear-gradient(19deg, #FAACA8 20%, #DDD6F3 87%);
+.header logo {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -231,7 +229,8 @@ body {
 </div>
 <div class="header">
     <h1>
-        <img src="baby jumbo.png" width="150%" height="150%">
+        <img src="baby jumbo.png">
+        <!-- width="150%" height="150%"> -->
     </h1>
 
   <p>Get Notified About Your Favorite Meals</p>
