@@ -22,7 +22,7 @@ window.alert("3rd element is: " + z);
        var length_three = food_options_three.length;
 
        var option_one = Math.floor(Math.random() * length_one);
-           var option_two = Math.floor(Math.random() * length_two);
+               var option_two = Math.floor(Math.random() * length_two);
            while (option_two == option_one) {
                 var option_two = Math.floor(Math.random() * length_two);
          }
@@ -87,12 +87,6 @@ body {
   background: transparent;
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
-}
 
 .header h1 {
   font-size: 50px;
@@ -160,7 +154,7 @@ body {
   clear: both;
 }
 
-input[type=text], select {
+.input[type=text], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -171,7 +165,7 @@ input[type=text], select {
 }
 
 /*Input settings*/
-input[type=submit] {
+.input[type=submit] {
   width: 100%;
   background-color: #4CAF50;
   color: white;
@@ -182,11 +176,11 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+.input[type=submit]:hover {
   background-color: #45a049;
 }
 
-div {
+.div {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
@@ -222,9 +216,9 @@ div {
 
 <div class="header">
     <h1>
-        <img src="baby jumbo.png" width="150%" height="150%"> </img>
+        <img src="baby jumbo.png" width="150%" height="150%">
             Jumbowl
-         <img src="logo.png" alt="logo" class="center"> </img>
+         <img src="logo.png" alt="logo">
     </h1>
 
   <p>Get Notified About Your Favorite Meals</p>
@@ -251,7 +245,18 @@ div {
       <div class="fakeimg" style="height:200px;">Image</div>
       <p>If you are heading to Dewick, turn around and run uphills to Carm.</p>
     </div>
+    <div class="card">
+    <form>
+     <select>
+       <h2>
+       <option value="Breakfast">Breakfast</option>
+       <option value="Lunch">Lunch</option>
+       <option value="Dinner">Dinner</option>
+       <option value="Late night">Dessert</option>
+     </select>
+   </form>
   </div>
+
   <div class="rightcolumn">
     <div class="card">
       <h2>About Us</h2>
