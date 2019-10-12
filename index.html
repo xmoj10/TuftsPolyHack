@@ -63,8 +63,14 @@ body {
 .topnav a:hover:(.active) {
   color: #8EC5FC;
 }
+#data{
+    margin-left: 150px;
+    /* align-content: right; */
+}
 
-
+#meal {
+    margin-left: 100px;
+}
 /* Create two unequal columns that floats next to each other */
 /* Left column */
 .leftcolumn {
@@ -142,13 +148,13 @@ body {
 </style>
 </head>
 
-<body class="all-header" onload= "updateMealOptions()">
+<body class="all-header">
+
+<!-- onload= "updateMealOptions()"> -->
 <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-
 <script>
-
 var firebaseConfig = {
    apiKey: "AIzaSyCiwIIAAkKVPA_1qOxfSlQO1c4yal1rv1o",
    authDomain: "test-project-a4874.firebaseapp.com",
@@ -305,42 +311,46 @@ var firebaseConfig = {
   <b><a href="https://www.google.com"> Local Meals  </a></b>
   <b><a href="#" style="float:right">Settings</a></b>
 </div>
+
+
+
+<!-- Left Side -->
 <div class="leftcolumn">
-            <div class="card">
+        <div class="card">
+            <div id="meal" float="left" width="50%">
+                    Choose your favorite foods
+                    <h5>
+                        Choose a meal!
+                    </h5>
+                    <select id="mealtype" onchange="onMealChange()">
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Dinner">Dinner</option>
+                        <option value="Late night">Late night</option>
+                    </select>
+                    <select id="mealoptions">
+                        <option value="Late night">
+                            Pulldown Menu
+                        </option>
+                    </select>
+            </div>
 
-                <div float="left" width="50%" align="center">
-                        Choose your favorite foods
-                        <h5>
-                            Choose a meal!
-                        </h5>
-                        <select id="mealtype" onchange="onMealChange()">
-                            <option value="Breakfast">Breakfast</option>
-                            <option value="Lunch">Lunch</option>
-                            <option value="Dinner">Dinner</option>
-                            <option value="Late night">Late night</option>
-                        </select>
-                        <select id="mealoptions">
-                            <option value="Late night">
-                                Pulldown Menu
-                            </option>
-                        </select>
-                </div>
-
-                <div style="float: right; width: 50%;">
-                    <h2 align="center">
-                        User Database
-                        <input type = "text" placeHolder = "Credit Card Number" id = "nameField">
-                        <input type = "text" placeholder = "CVC" id = "ageField">
+            <div id="data" style="width: 50%; float:right;">
+                <h2 align= "center">
+                    User Database
+                </h2>
+                <input type = "text" placeHolder = "Credit Card Number" id = "nameField">
+                    <input type = "text" placeholder = "CVC" id = "ageField">
                         <button onclick="writeData()" align="center">
                             Submit
                         </button>
-                    </h2>
-
-                </div>
+                    </input>
+                </input>
+            </div>
         </div>
-    </div>
-
-    <div class="rightcolumn">
+</div>
+<!-- Right Side -->
+<div class="rightcolumn">
             <div class="rightcard">
 
                 <h2>
@@ -358,27 +368,56 @@ var firebaseConfig = {
               </p>
             </div>
 
-<!-- <div style="margin-bottom:20px;"> -->
-         <div class="rightcard" align="center">
-           <h1>
-               Feeling Lucky?
-           </h1>
-           <!-- <p style="text-align: center; font-size:15px; padding-left: 7px; padding-right: 7px"> -->
-           <p>
-               Generate a randomized meal below!
-           </p>
-         <!-- </div> -->
-           <button onclick="createCombo()">
-               Create a Meal Combo
-           </button>
+            <div class="rightcard" align="center">
+                <h1>
+                    Feeling Lucky?
+                </h1>
+                <p>
+                    Generate a randomized meal below!
+                </p>
+                <button onclick="createCombo()">
+                    Create a Meal Combo
+                </button>
 
-         <div style="width:90%; background-color: silver">
-           <p id="choice_one" style="text-align: center">Drink Here!</p>
-           <p id="choice_two" style="text-align: center">Main Entree Here!</p>
-           <p id="choice_three" style="text-align: center">Dessert Here!</p>
-         </div>
-     </div>
- </div>
+                 <div style="width:90%; background-color: silver">
+                   <p id="choice_one" style="text-align: center">Drink Here!</p>
+                   <p id="choice_two" style="text-align: center">Main Entree Here!</p>
+                   <p id="choice_three" style="text-align: center">Dessert Here!</p>
+                 </div>
+             </div>
+</div>
+<div class="all-header">
+<div class="footer">
+    	<h3>
+            Give us Feedback:
+        </h3>
+        <div style="links">
+            <button>
+            <a href = "https://forms.gle/XkSwozmMW8W9ch2g7">
+                Feedback?
+            </a>
+            </button>
+        </div>
+
+        <div style="align:center; position:auto;">
+            Jumbowls (C) 2019
+        </div>
+
+        <div>
+          <!-- <h2 align="center">
+              User Database
+              <br>
+          <input type = "text" placeHolder = "credit card num" id = "nameField">
+          <input type = "text" placeholder = "CVC" id = "ageField">
+          <button onclick = "writeData()">Submit</button>
+      </h2> -->
+        </div>
+</div>
+</div>
+
+
+
+
 </body>
 
 </html>
