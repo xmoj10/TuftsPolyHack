@@ -85,7 +85,7 @@ body {
 .fakeimg {
   padding: 20px;
   width: 100%;
-  background: #dba0d5;
+  background: #ffffff;
 }
 
 /* Add a card effect for articles */
@@ -143,6 +143,7 @@ body {
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
 
 <script>
+
 var firebaseConfig = {
    apiKey: "AIzaSyCiwIIAAkKVPA_1qOxfSlQO1c4yal1rv1o",
    authDomain: "test-project-a4874.firebaseapp.com",
@@ -162,9 +163,7 @@ var firebaseConfig = {
            name: document.getElementById("nameField").value,
            age: document.getElementById("ageField").value
        });
-
    }
-
 
       function onMealChange() {
           window.alert("test");
@@ -174,64 +173,10 @@ var firebaseConfig = {
       function updateMealOptions() {
         var meal = document.getElementById("mealtype").value;
 
-        updateMealOptionsHelper(meal);
+        //updateMealOptionsHelper(meal);
       }
 
-      //inspiration from:
-      //https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
-      //https://stackoverflow.com/questions/8674618/adding-options-to-select-with-javascript
-      function updateMealOptionsHelper(meal) {
 
-         options = document.getElementById("mealoptions");
-
-         while (options.firstChild) {
-            options.remove(options.firstChild);
-         }
-
-        if (meal == "Breakfast") {
-            var food =[eggs, apple, toast];
-
-            for (int i = 0; i < food.length; i++) {
-              var opt = document.createElement('option');
-              opt.value = "food #" + (i + 1);
-              opt.innerHTML = food[i];
-              options.add(opt);
-            }
-            window.alert("tried to update to: breakfast");
-        } else if (meal == "Lunch") {
-
-          var food =[grilled cheese, hamburger, fries];
-
-          for (int i = 0; i < food.length; i++) {
-            var opt = document.createElement('option');
-            opt.value = "food #" + (i + 1);
-            opt.innerHTML = food[i];
-            options.add(opt);
-          }
-          window.alert("tried to update to: lunch");
-        } else if (meal == "Dinner") {
-          var food =[steak, potatoes];
-
-          for (int i = 0; i < food.length; i++) {
-            var opt = document.createElement('option');
-            opt.value = "food #" + (i + 1);
-            opt.innerHTML = food[i];
-            options.add(opt);
-          }
-          window.alert("tried to update to: dinner");
-        } else if (meal == "Late night") {
-
-          var food =[fries, burritos, pizza, mac and cheese];
-
-          for (int i = 0; i < food.length; i++) {
-            var opt = document.createElement('option');
-            opt.value = "food #" + (i + 1);
-            opt.innerHTML = food[i];
-            options.add(opt);
-          }
-          window.alert("tried to update to: dessert");
-        }
-      }
 
       function createCombo() {
 
@@ -272,8 +217,12 @@ var firebaseConfig = {
 
 IGNORE THIS SHIT
 <div class="all-header">
+    <div class="left-elephant">
+      <img src="baby jumbo.png" width="130px" height="130px" margin="right">
+    </div>
+    <div class="logo">
 
-    <div align="center" font-size="15px">
+    </div>
         <a href="#"> <img src ="logo.png" width="35%" height="35%">  </a>
             <h2 vertical-align="texttop">
             <img src="baby jumbo.png" width="130px" height="130px" margin="right">
@@ -306,7 +255,8 @@ IGNORE THIS SHIT
 <div>
     <div class="row">
         <div class="leftcolumn">
-            <div class="card" style="float: left; width: 75%">
+            <div class="card">
+                <div style="float: left; width: 75%">
                 <h2>
                     Choose your favorite foods
                 </h2>
@@ -373,10 +323,9 @@ IGNORE THIS SHIT
                     General Gau's, Fried Chicken, Bibimbop, etc.
                 </p>
             </div>
-        </div>
 
 
-      <div class="rightcolumn">
+    <div class="rightcolumn">
         <div class="card">
           <h2>
               About Us
@@ -386,10 +335,13 @@ IGNORE THIS SHIT
           <p>
               We are struggling college students who understand how it feels to walk into Dewick
               excited about General Gau's only to find out Tufts is only serving homophobia and racism.
-              We want other Jumbos to not suffer, and this website is dedicated to this purpose.</p>
-          <p>Nobel Prize, please sponsor us.</p>
+              We want other Jumbos to not suffer, and this website is dedicated to this purpose.
+          </p>
+          <p>
+              Nobel Prize, please sponsor us.
+          </p>
         </div>
-
+    </div>
         <!-- <div style="display: flex; flex-direction: column;
         align-items: center; padding-top: 25px; padding-bottom: 25px; background-color: gray">
           <div style="margin-bottom:20px;"> -->
