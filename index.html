@@ -130,11 +130,11 @@ body {
   padding: 15px;
 }
 
-.logo {
+/* .logo {
   display: block;
   align: center;
   width: 50%;
-}
+} */
 
 .subtitle {
   display: flex;
@@ -311,29 +311,32 @@ var firebaseConfig = {
                 <select id="mealoptions">
                   <option value="Late night">IF YOU CAN SEE THIS THEN THATS NOT GOOD</option>
                 </select>
+            </div>
 
-                <div cal
+            <div class="card" style="float: right; width: 25%">
                 <h2>
                     User Database
                     <br>
-                <input type = "text" placeHolder = "Credit Card Number" id = "nameField">
-                <input type = "text" placeholder = "CVC" id = "ageField">
-                <button onclick = "writeData()">Submit</button>
+                    <input type = "text" placeHolder = "Credit Card Number" id = "nameField">
+                    <input type = "text" placeholder = "CVC" id = "ageField">
+                    <button onclick = "writeData()">Submit</button>
                 </h2>
             </div>
+        </div>
+    </div>
 
-            <div class="card">
-              <h2>
-                Local Bites
-              </h2>
-              <h5>
-                  Here's a couple of local bites you should check out:
-              </h5>
+    <div class="card">
+        <h2>
+            Local Bites
+        </h2>
+        <h5>
+            Here's a couple of local bites you should check out:
+        </h5>
 
-            <div class ="fakeimg">
-              <a href="https://www.bostonburgercompany.com/">
-                  <img src="420 burger.png" style="height: 150px; width: 150px;">
-              </a>
+    <div class ="fakeimg">
+        <a href="https://www.bostonburgercompany.com/">
+        <img src="420 burger.png" style="height: 150px; width: 150px;">
+        </a>
                   <a href="https://www.kungfutea.com/">
                   <img src="boba.png" style="height: 150px; width: 150px;">
                     </a>
@@ -367,7 +370,6 @@ var firebaseConfig = {
           <h2>
               About Us
           </h2>
-          <!-- <div class="fakeimg"> -->
               <img src="us.jpg" style="width: 250px; height: 200px; align: center;">
 
           <p>
@@ -387,7 +389,7 @@ var firebaseConfig = {
             <!-- <p style="text-align: center; font-size:15px; padding-left: 7px; padding-right: 7px"> -->
             <p>Generate a randomized meal below!</p>
           <!-- </div> -->
-            <button onclick=createCombo()>
+            <button onclick="createCombo()">
                 Create a Meal Combo
             </button>
 
