@@ -12,9 +12,9 @@
        var y = document.getElementById("form2").value;
        var z = document.getElementById("form3").value;
 
-       var food_options_one[] = clean_string(x);
-       var food_options_two[] = clean_string(y);
-       var food_options_three[] = clean_string(z);
+       var food_options_one = clean_string(x);
+       var food_options_two = clean_string(y);
+       var food_options_three = clean_string(z);
 
        var length_one = food_options_one.length;
        var length_two = food_options_two.length;
@@ -43,8 +43,8 @@
 
                for (int i = 0; i < str.length; i++) {
                    if (str[i] == " ") {
-               var temp = str.substring(start, i);
-               start = i + 1;
+                           var temp = str.substring(start, i);
+                           start = i + 1;
                            array.push(temp);
                        }
                }
@@ -67,6 +67,7 @@ body {
 
 /* Header/Blog Title */
 .header {
+  <img src="img/baby jumbo.png" alt="logo" />
   padding: 30px;
   text-align: center;
   background-color: #FAACA8;
@@ -175,7 +176,6 @@ body {
 
 <div class="header">
   <h1>Jumbowl</h1>
-  <img scr="logo.png">
   <p>GET NOTIFIED ABOUT YOUR FAVORITE MEALS</p>
 </div>
 
@@ -209,7 +209,7 @@ body {
       <p>Nobel Prize, please sponsor us.</p>
     </div>
     <div class="card">
-      <h3>Meals Outside Tufts</h3>
+      <h3>Local Bites</h3>
       <div class="fakeimg"><p>Image</p></div>
       <div class="fakeimg"><p>Image</p></div>
       <div class="fakeimg"><p>Image</p></div>
