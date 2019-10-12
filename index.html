@@ -4,7 +4,7 @@
 <script>
 
    function createCombo() {
-       window.alert("function called");
+       document.write("function called");
            //var food_options = ["pizza", "apple", "cookie", "salad", "rice", "ice cream"];
 
        var x = document.getElementById("form1").value;
@@ -259,6 +259,25 @@ div {
       <p>We are struggling college students who understand how it feels to walk into Dewick excited about General Gau's only to find out Tufts is only serving homophobism and racism. We want other Jumbos to not suffer, and this website is dedicated to this purpose.</p>
       <p>Nobel Prize, please sponsor us.</p>
     </div>
+
+    <div>
+      <form action="/action_page.php">
+        <label for="form1">First Choice:</label>
+        <input type="text" id="form1" name="firstchoice" placeholder="Your first choice..">
+
+        <label for="form2">Second Choice:</label>
+        <input type="text" id="form2" name="secondchoice" placeholder="Your second choice..">
+
+        <label for="form3">Third Choice:</label>
+        <input type="text" id="form3" name="thirdchoice" placeholder="Your third choice..">
+
+        <button onclick="createCombo()"> Create a Meal Combo </button>
+      </form>
+        <p id="choice_one">food 1</p>
+        <p id="choice_two">food 2</p>
+        <p id="choice_three">food 3</p>
+    </div>
+
     <div class="card">
       <h3>Local Bites</h3>
       <div class="fakeimg"><p>Image</p></div>
