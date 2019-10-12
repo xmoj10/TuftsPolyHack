@@ -7,7 +7,6 @@
    function onMealChange() {
        window.alert("test");
        updateMealOptions();
-
    }
 
    function updateMealOptions() {
@@ -167,11 +166,11 @@ body {
 .topnav a:before {
   content: "";
   position: absolute;
-  width: 50%;
+  width: 200%;
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #000;
+  background-color: #8EC5FC;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -313,8 +312,7 @@ var firebaseConfig = {
 <div>
     <div class="row">
         <div class="leftcolumn">
-            <div class="card">
-                <div class="leftcolumn">
+            <div class="card" style="float: left; width: 75%">
                 <h2>
                     Choose your favorite foods
                 </h2>
@@ -330,17 +328,16 @@ var firebaseConfig = {
                 <select id="mealoptions">
                   <option value="Late night">IF YOU CAN SEE THIS THEN THATS NOT GOOD</option>
                 </select>
-                </div>
+            </div>
 
-                <div class="rightcolumn">
-                    <h2 align="center">
-                        User Database
-                        <br>
-                    <input type = "text" placeHolder = "credit card num" id = "nameField">
-                    <input type = "text" placeholder = "CVC" id = "ageField">
-                    <button onclick = "writeData()">Submit</button>
+            <div class="card" style="float: right; width: 25%">
+                <h2 align="center">
+                    User Database
+                    <br>
+                <input type = "text" placeHolder = "credit card num" id = "nameField">
+                <input type = "text" placeholder = "CVC" id = "ageField">
+                <button onclick = "writeData()">Submit</button>
                 </h2>
-                </div>
             </div>
 
             <div class="card">
