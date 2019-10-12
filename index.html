@@ -71,10 +71,7 @@ body {
   float: left;
   width: 75%;
 }
-.middlecolumn {
-  float: auto;
-  width: 37.5%
-}
+
 /* Right column */
 .rightcolumn {
   float: right;
@@ -167,20 +164,20 @@ var firebaseConfig = {
    }
 
       function onMealChange() {
-          window.alert("test");
           updateMealOptions();
       }
 
       //inspiration from:
       //https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
       //https://stackoverflow.com/questions/8674618/adding-options-to-select-with-javascript
+      //https://stackoverflow.com/questions/12932959/remove-values-from-select-list-based-on-condition
       function updateMealOptions() {
 
         var meal = document.getElementById("mealtype").value;
         var options = document.getElementById("mealoptions");
 
-        while (options.firstChild) {
-           options.remove(options.firstChild);
+        while (options.length > 0) {
+           options.remove(0);
         }
 
        if (meal == "Breakfast") {
@@ -190,7 +187,7 @@ var firebaseConfig = {
              var opt = document.createElement('option');
              opt.value = "food #" + (i + 1);
              opt.innerHTML = food[i];
-             options.add(opt);
+             document.getElementById("mealoptions").add(opt);
            }
            window.alert("tried to update to: breakfast");
        } else if (meal == "Lunch") {
@@ -201,7 +198,7 @@ var firebaseConfig = {
            var opt = document.createElement('option');
            opt.value = "food #" + (i + 1);
            opt.innerHTML = food[i];
-           options.add(opt);
+           document.getElementById("mealoptions").add(opt);
          }
          window.alert("tried to update to: lunch");
        } else if (meal == "Dinner") {
@@ -211,7 +208,7 @@ var firebaseConfig = {
            var opt = document.createElement('option');
            opt.value = "food #" + (i + 1);
            opt.innerHTML = food[i];
-           options.add(opt);
+           document.getElementById("mealoptions").add(opt);
          }
          window.alert("tried to update to: dinner");
        } else if (meal == "Late night") {
@@ -222,7 +219,7 @@ var firebaseConfig = {
            var opt = document.createElement('option');
            opt.value = "food #" + (i + 1);
            opt.innerHTML = food[i];
-           options.add(opt);
+           document.getElementById("mealoptions").add(opt);
          }
          window.alert("tried to update to: dessert");
        }
@@ -266,17 +263,18 @@ var firebaseConfig = {
 
 </script>
 
-IGNORE THIS SHIT
-<div class="all-header">
-    <div class="left-elephant">
-      <img src="baby jumbo.png" width="130px" height="130px" margin="right">
-    </div>
-    <div class="logo">
+<div align="center">
+    <div class="all-header">
+      <div class="left-elephant">
+        <img src="baby jumbo.png" width="130px" height="130px" margin="right">
+      </div>
+      <div class="logo">
         <a href="#"> <img src ="logo.png"></a>
-    </div>
-    <div class="right-elephant">
+      </div>
+      <div class="right-elephant">
         <img src="flip baby jumbo.png" width="130px" height="130px" margin="left">
-    </div>
+      </div>
+  </div>
 
 
 
@@ -299,11 +297,13 @@ IGNORE THIS SHIT
 </div>
 
 <!-- this is for under the logo area -->
+<!-- this is for under the logo area -->
+<!-- this is for under the logo area -->
 <div>
     <div class="row">
         <div class="leftcolumn">
             <div class="card">
-                <div style="float: left; width: 75%">
+                <div style="align: left; width: 75%">
                 <h2>
                     Choose your favorite foods
                 </h2>
@@ -317,11 +317,14 @@ IGNORE THIS SHIT
                     <option value="Late night">Late night</option>
                 </select>
                 <select id="mealoptions">
-                  <option value="Late night">IF YOU CAN SEE THIS THEN THATS NOT GOOD</option>
+                  <option value="Late night">
+                      Pulldown Menu
+                      <!-- IF YOU CAN SEE THIS THEN THATS NOT GOOD -->
+                  </option>
                 </select>
                 </div>
 
-                <div style="float: right; width: 25%">
+                <div style="align: right; width: 25%">
                 <h2>
                     User Database
                     <br>
@@ -369,7 +372,7 @@ IGNORE THIS SHIT
                     General Gau's, Fried Chicken, Bibimbop, etc.
                 </p>
             </div>
-
+        </div>
 
     <div class="rightcolumn">
         <div class="card">
@@ -437,6 +440,7 @@ IGNORE THIS SHIT
       </h2> -->
         </div>
     </div>
+</div>
 </div>
 </body>
 
