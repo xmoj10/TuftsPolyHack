@@ -2,112 +2,6 @@
 <html>
 <head>
 
-<script>
-
-   function onMealChange() {
-       window.alert("test");
-       updateMealOptions();
-   }
-
-   function updateMealOptions() {
-     var meal = document.getElementById("mealtype").value;
-
-     updateMealOptionsHelper(meal);
-   }
-
-   //inspiration from:
-   //https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
-   //https://stackoverflow.com/questions/8674618/adding-options-to-select-with-javascript
-   function updateMealOptionsHelper(meal) {
-
-      options = document.getElementById("mealoptions");
-
-      while (options.firstChild) {
-         options.remove(options.firstChild);
-      }
-
-     if (meal == "Breakfast") {
-         var food =[eggs, apple, toast];
-
-         for (int i = 0; i < food.length; i++) {
-           var opt = document.createElement('option');
-           opt.value = "food #" + (i + 1);
-           opt.innerHTML = food[i];
-           options.add(opt);
-         }
-         window.alert("tried to update to: breakfast");
-     } else if (meal == "Lunch") {
-
-       var food =[grilled cheese, hamburger, fries];
-
-       for (int i = 0; i < food.length; i++) {
-         var opt = document.createElement('option');
-         opt.value = "food #" + (i + 1);
-         opt.innerHTML = food[i];
-         options.add(opt);
-       }
-       window.alert("tried to update to: lunch");
-     } else if (meal == "Dinner") {
-       var food =[steak, potatoes];
-
-       for (int i = 0; i < food.length; i++) {
-         var opt = document.createElement('option');
-         opt.value = "food #" + (i + 1);
-         opt.innerHTML = food[i];
-         options.add(opt);
-       }
-       window.alert("tried to update to: dinner");
-     } else if (meal == "Late night") {
-
-       var food =[fries, burritos, pizza, mac and cheese];
-
-       for (int i = 0; i < food.length; i++) {
-         var opt = document.createElement('option');
-         opt.value = "food #" + (i + 1);
-         opt.innerHTML = food[i];
-         options.add(opt);
-       }
-       window.alert("tried to update to: dessert");
-     }
-   }
-
-   function createCombo() {
-
-     //window.alert("test!");
-           //var food_options = ["pizza", "apple", "cookie", "salad", "rice", "ice cream"];
-
-       // var x = document.getElementById("form1").value;
-       // var y = document.getElementById("form2").value;
-       // var z = document.getElementById("form3").value;
-
-       var food_options_one = ["water", "apple juice", "soda", "spicy water"];
-       var food_options_two = ["chicken", "fish tacos", "beef tacos", "gaus"];
-       var food_options_three = ["brownie", "cookie", "cake", "ice cream"];
-       // var food_options_one = clean_string(x);
-       // var food_options_two = clean_string(y);
-       // var food_options_three = clean_string(z);
-
-       var length_one = food_options_one.length;   //food_options_one.length;
-       var length_two = food_options_two.length;   //food_options_two.length;
-       var length_three= food_options_three.length; //food_options_three.length;
-
-       var option_one = Math.floor(Math.random() * length_one);
-       var option_two = Math.floor(Math.random() * length_two);
-       while (option_two == option_one) {
-           var option_two = Math.floor(Math.random() * length_two);
-       }
-           var option_three = Math.floor(Math.random() * length_three);
-           while (option_three == option_one || option_three == option_two) {
-                var option_three = Math.floor(Math.random() * length_three);
-         }
-
-           document.getElementById("choice_one").innerHTML = "Drink:  " + food_options_one[option_one];
-           document.getElementById("choice_two").innerHTML = "Main entree:  " + food_options_two[option_two];
-           document.getElementById("choice_three").innerHTML = "Dessert:  " + food_options_three[option_three];
-   }
-
-   </script>
-
 <style>
 * {
   box-sizing: border-box;
@@ -270,8 +164,125 @@ var firebaseConfig = {
        });
 
    }
+
+
+      function onMealChange() {
+          window.alert("test");
+          updateMealOptions();
+      }
+
+      function updateMealOptions() {
+        var meal = document.getElementById("mealtype").value;
+
+        updateMealOptionsHelper(meal);
+      }
+
+      //inspiration from:
+      //https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+      //https://stackoverflow.com/questions/8674618/adding-options-to-select-with-javascript
+      function updateMealOptionsHelper(meal) {
+
+         options = document.getElementById("mealoptions");
+
+         while (options.firstChild) {
+            options.remove(options.firstChild);
+         }
+
+        if (meal == "Breakfast") {
+            var food =[eggs, apple, toast];
+
+            for (int i = 0; i < food.length; i++) {
+              var opt = document.createElement('option');
+              opt.value = "food #" + (i + 1);
+              opt.innerHTML = food[i];
+              options.add(opt);
+            }
+            window.alert("tried to update to: breakfast");
+        } else if (meal == "Lunch") {
+
+          var food =[grilled cheese, hamburger, fries];
+
+          for (int i = 0; i < food.length; i++) {
+            var opt = document.createElement('option');
+            opt.value = "food #" + (i + 1);
+            opt.innerHTML = food[i];
+            options.add(opt);
+          }
+          window.alert("tried to update to: lunch");
+        } else if (meal == "Dinner") {
+          var food =[steak, potatoes];
+
+          for (int i = 0; i < food.length; i++) {
+            var opt = document.createElement('option');
+            opt.value = "food #" + (i + 1);
+            opt.innerHTML = food[i];
+            options.add(opt);
+          }
+          window.alert("tried to update to: dinner");
+        } else if (meal == "Late night") {
+
+          var food =[fries, burritos, pizza, mac and cheese];
+
+          for (int i = 0; i < food.length; i++) {
+            var opt = document.createElement('option');
+            opt.value = "food #" + (i + 1);
+            opt.innerHTML = food[i];
+            options.add(opt);
+          }
+          window.alert("tried to update to: dessert");
+        }
+      }
+
+      function createCombo() {
+
+        //window.alert("test!");
+              //var food_options = ["pizza", "apple", "cookie", "salad", "rice", "ice cream"];
+
+          // var x = document.getElementById("form1").value;
+          // var y = document.getElementById("form2").value;
+          // var z = document.getElementById("form3").value;
+
+          var food_options_one = ["water", "apple juice", "soda", "spicy water"];
+          var food_options_two = ["chicken", "fish tacos", "beef tacos", "gaus"];
+          var food_options_three = ["brownie", "cookie", "cake", "ice cream"];
+          // var food_options_one = clean_string(x);
+          // var food_options_two = clean_string(y);
+          // var food_options_three = clean_string(z);
+
+          var length_one = food_options_one.length;   //food_options_one.length;
+          var length_two = food_options_two.length;   //food_options_two.length;
+          var length_three= food_options_three.length; //food_options_three.length;
+
+          var option_one = Math.floor(Math.random() * length_one);
+          var option_two = Math.floor(Math.random() * length_two);
+          while (option_two == option_one) {
+              var option_two = Math.floor(Math.random() * length_two);
+          }
+              var option_three = Math.floor(Math.random() * length_three);
+              while (option_three == option_one || option_three == option_two) {
+                   var option_three = Math.floor(Math.random() * length_three);
+            }
+
+              document.getElementById("choice_one").innerHTML = "Drink:  " + food_options_one[option_one];
+              document.getElementById("choice_two").innerHTML = "Main entree:  " + food_options_two[option_two];
+              document.getElementById("choice_three").innerHTML = "Dessert:  " + food_options_three[option_three];
+      }
+
 </script>
 
+IGNORE THIS SHIT
+<div class="all-header">
+
+    <div align="center" font-size="15px">
+        <a href="#"> <img src ="logo.png" width="35%" height="35%">  </a>
+            <h2 vertical-align="texttop">
+            <img src="baby jumbo.png" width="130px" height="130px" margin="right">
+            Get notified about your meals!
+            <img src="flip baby jumbo.png" width="130px" height="130px" margin="left">
+        </h2>
+    </div>
+</div>
+IGNORE THIS SHIT
 
 <div class="all-header">
     <div align="center" font-size="15px">
@@ -333,18 +344,18 @@ var firebaseConfig = {
             Here's a couple of local bites you should check out:
         </h5>
 
-    <div class ="fakeimg">
-        <a href="https://www.bostonburgercompany.com/">
-        <img src="420 burger.png" style="height: 150px; width: 150px;">
-        </a>
-                  <a href="https://www.kungfutea.com/">
-                  <img src="boba.png" style="height: 150px; width: 150px;">
-                    </a>
-            </div>
+        <div class ="fakeimg">
+            <a href="https://www.bostonburgercompany.com/">
+            <img src="420 burger.png" style="height: 150px; width: 150px;">
+            </a>
+            <a href="https://www.kungfutea.com/">
+            <img src="boba.png" style="height: 150px; width: 150px;">
+            </a>
+        </div>
 
-              <p>
+             <p>
                   If you are heading to Dewick, turn around and run uphills to Carm.
-              </p>
+             </p>
             </div>
 
             <div class="card">
