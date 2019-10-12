@@ -25,10 +25,10 @@
        var length_three= food_options_three.length; //food_options_three.length;
 
        var option_one = Math.floor(Math.random() * length_one);
-               var option_two = Math.floor(Math.random() * length_two);
-           while (option_two == option_one) {
-                var option_two = Math.floor(Math.random() * length_two);
-         }
+       var option_two = Math.floor(Math.random() * length_two);
+       while (option_two == option_one) {
+           var option_two = Math.floor(Math.random() * length_two);
+       }
            var option_three = Math.floor(Math.random() * length_three);
            while (option_three == option_one || option_three == option_two) {
                 var option_three = Math.floor(Math.random() * length_three);
@@ -213,11 +213,11 @@ body {
 <body>
 
 <div class="logo-wrapper">
-  <div class="logo"
-
+  <div class="logo"></div>
+</div>
 <div class="header">
     <h1>
-        <img src="baby jumbo.png">
+        <img src="baby jumbo.png" width="175px" height="175px"> </img>
         GET NOTIFIED ABOUT YOUR FAVORITE MEALS
         <!-- width="150%" height="150%"> -->
     </h1>
