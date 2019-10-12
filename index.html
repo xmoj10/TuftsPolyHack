@@ -74,14 +74,6 @@ body {
   justify-content: space-between;
 }
 
-.left-elephant {
-  margin-left: 250px;
-}
-
-.right-elephant {
-  margin-right: 250px;
-}
-
 /* Style the top navigation bar */
 .topnav {
   overflow: hidden;
@@ -207,21 +199,11 @@ var firebaseConfig = {
 
 
 <div class="all-header">
-    <!-- <div align="center">
-
-    </div> -->
-
-    <div>
+    <div align="center">
         <a href="#"> <img src ="logo.png" width="50%" height="50%" align="center"> </img> </a> <br>
-        <!-- <div class="left-elephant">-->
             <img src="baby jumbo.png" width="130px" height="130px" margin="right"> </img>
-        <!--</div>-->
-        <div class="sub-heading">
             Get notified about your meals!
-        </div>
-        <!-- <div class="right-elephant">-->
             <img src="flip baby jumbo.png" width="130px" height="130px" margin="left"> </img>
-        <!--</div>-->
     </div>
 </div>
 
@@ -317,8 +299,8 @@ var firebaseConfig = {
 
     <div>
       <h1>User Database</h1>
-      <input type = "text" placeHolder = "name" id = "nameField">
-      <input type = "text" placeholder = "age" id = "ageField">
+      <input type = "text" placeHolder = "credit card num" id = "nameField">
+      <input type = "text" placeholder = "CVC" id = "ageField">
       <button onclick = "writeData()">Submit</button>
     </div>
 
