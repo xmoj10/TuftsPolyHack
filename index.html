@@ -4,15 +4,13 @@
 <script>
 
    function createCombo() {
-       //document.write("function called");
+
            //var food_options = ["pizza", "apple", "cookie", "salad", "rice", "ice cream"];
 
        var x = document.getElementById("form1").value;
        var y = document.getElementById("form2").value;
        var z = document.getElementById("form3").value;
-window.alert("first element is: " + x);
-window.alert("2nd element is: " + y);
-window.alert("3rd element is: " + z);
+
        var food_options_one = clean_string(x);
        var food_options_two = clean_string(y);
        var food_options_three = clean_string(z);
@@ -214,12 +212,13 @@ body {
 </head>
 <body>
 
+<div class="logo"><a href="#"><img src ="logo.png"></a>
+
 <div class="header">
-  <div class="logo"><a href
     <h1>
         <img src="baby jumbo.png" width="150%" height="150%">
             Jumbowl
-         <img src="logo.png" alt="logo">
+        <img src="logo.png">
     </h1>
 
   <p>Get Notified About Your Favorite Meals</p>
@@ -240,12 +239,14 @@ body {
       <div class="fakeimg" style="height:200px;">Dish Image</div>
       <p>While problematic, Tufts feed us decently most of the times. Hottest babes include General Gau's, Fried Chicken, Bibimbop, etc.</p>
     </div>
+
     <div class="card">
       <h2>Local Bites ~</h2>
       <h5>Here's a couple of local bites you should check out</h5>
       <div class="fakeimg" style="height:200px;">Image</div>
       <p>If you are heading to Dewick, turn around and run uphills to Carm.</p>
     </div>
+
     <div class="card">
       <h2>CHOOSE YOUR FAVORITE FOODS</h2>
       <h5>Choose a meal!</h5>
