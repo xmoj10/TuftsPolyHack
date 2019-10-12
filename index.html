@@ -13,20 +13,29 @@
    function updateMealOptions() {
      var meal = document.getElementById("mealtype").value;
 
-     if (meal == "Breakfast") {
-         updateMealOptionsHelper(meal);
-     } else if (meal == "Lunch") {
-       window.alert("you chose: lunch");
-     } else if (meal == "Dinner") {
-window.alert("you chose: dinner");
-     } else if (meal == "Late night") {
-       window.alert("you chose: Late night");
-     }
-
+     updateMealOptionsHelper(meal);
    }
 
+   //
    function updateMealOptionsHelper(meal) {
 
+      while (myNode.firstChild) {
+         myNode.removeChild(myNode.firstChild);
+       }
+
+     if (meal == "Breakfast") {
+         var food =[eggs, apple, toast];
+
+         for (int i = 0; i < food.length; i++) {
+
+         }
+     } else if (meal == "Lunch") {
+
+     } else if (meal == "Dinner") {
+
+     } else if (meal == "Late night") {
+
+     }
    }
 
    function createCombo() {
@@ -103,6 +112,8 @@ body {
 .topnav {
   overflow: hidden;
   background-color: #333;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.5s;
 }
 
 /* Style the topnav links */
@@ -110,6 +121,7 @@ body {
   float: left;
   display: block;
   color: #f2f2f2;
+  transition: color 0.5s;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -117,7 +129,8 @@ body {
 
 /* Change color on hover */
 .topnav a:hover {
-  background-color: #ddd;
+  /* background-color: #ddd; */
+  border-bottom: 1px solid black;
   color: #8EC5FC;
 }
 
@@ -289,7 +302,7 @@ var firebaseConfig = {
 
       <div class="rightcolumn">
         <div class="card">
-          <h2>ABOUT US</h2>
+          <h2>About Us</h2>
           <!-- <div class="fakeimg"> -->
               <img src="us.jpg" style="width: 250px; height: 200px; align: center;"> </img>
 
@@ -302,16 +315,19 @@ var firebaseConfig = {
         <!-- <div style="display: flex; flex-direction: column;
         align-items: center; padding-top: 25px; padding-bottom: 25px; background-color: gray">
           <div style="margin-bottom:20px;"> -->
-          <div class="card">
-            <h1>Feeling Lucky?</h1>
+          <div class="card" align="center">
+            <h1>
+                Feeling Lucky?
+            </h1>
             <!-- <p style="text-align: center; font-size:15px; padding-left: 7px; padding-right: 7px"> -->
-            <p style="text-align: center; font-size: 15px">
+            <p style="text-align: center;font-size: 15px">
                 Generate a randomized meal below!</p>
           <!-- </div> -->
-            <button style="margin-bottom:20px; border-radius: 5px; width:150px;
+            <button style="margin-bottom:20px; border-radius: 8px; width:150px;
             background-color: #4CAF50; border: none; color: white; padding: 16px 32px;
-            text-decoration: none; cursor: pointer; onclick="createCombo()"">
-                Create a Meal Combo </button>
+            text-decoration: none; cursor: pointer" onclick= createCombo(); ">
+                Create a Meal Combo
+            </button>
           <div style="width:90%; background-color: silver">
             <p id="choice_one" style="text-align: center">Drink Here!</p>
             <p id="choice_two" style="text-align: center">Main Entree Here!</p>
