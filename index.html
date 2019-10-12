@@ -4,6 +4,28 @@
 
 <script>
 
+var firebaseConfig = {
+   apiKey: "AIzaSyCiwIIAAkKVPA_1qOxfSlQO1c4yal1rv1o",
+   authDomain: "test-project-a4874.firebaseapp.com",
+   databaseURL: "https://test-project-a4874.firebaseio.com",
+   projectId: "test-project-a4874",
+   storageBucket: "",
+   messagingSenderId: "290554401552",
+   appId: "1:290554401552:web:da6d23154c89a77b"
+ };
+ // Initialize Firebase
+ firebase.initializeApp(firebaseConfig);
+
+
+   function writeData() {
+       window.alert("alert pop");
+       firebase.database().ref("User").set({
+           name: document.getElementById("nameField").value,
+           age: document.getElementById("ageField").value
+       });
+
+   }
+
    function createCombo() {
 
      //window.alert("test!");
@@ -185,22 +207,23 @@ body {
 
 <body>
 <div class="all-header">
-    <div class="logo-wrapper">
+    <div
+    <!-- class="logo-wrapper"> -->
         <!-- <div class="logo"> -->
             <a href="#"> <img src ="logo.png" width="500px" height="250px" align="center"> </img> </a>
         <!-- </div> -->
     </div>
 
     <div class="subtitle">
-        <div class="left-elephant">
-            <img src="baby jumbo.png" width="130px" height="130px"> </img>
-        </div>
+        <!-- <div class="left-elephant">-->
+            <img src="baby jumbo.png" width="130px" height="130px" align="center"> </img>
+        <!--</div>-->
         <div class="sub-heading">
             <h3>Get notified about your meals!</h3>
         </div>
-        <div class="right-elephant">
-            <img src="flip baby jumbo.png" width="130px" height="130px"> </img>
-        </div>
+        <!-- <div class="right-elephant">-->
+            <img src="flip baby jumbo.png" width="130px" height="130px" align="center"> </img>
+        <!--</div>-->
     </div>
 </div>
 
@@ -293,6 +316,16 @@ body {
         <div style="align:center; position:auto;">
     	<br text-align="center">  JumboBowls (C) 2019 </div>
     </div>
+
+    <div>
+      <h1>User Database</h1>
+      <input type = "text" placeHolder = "name" id = "nameField">
+      <input type = "text" placeholder = "age" id = "ageField">
+      <button onclick = "writeData()">Submit</button>
+    </div>
+
+
+
 </div>
 
 </body>
