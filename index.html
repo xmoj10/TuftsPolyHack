@@ -11,7 +11,9 @@
        var x = document.getElementById("form1").value;
        var y = document.getElementById("form2").value;
        var z = document.getElementById("form3").value;
-
+window.alert("first element is: " + x);
+window.alert("2nd element is: " + y);
+window.alert("3rd element is: " + z);
        var food_options_one = clean_string(x);
        var food_options_two = clean_string(y);
        var food_options_three = clean_string(z);
@@ -30,7 +32,7 @@
                 var option_three = Math.floor(Math.random() * length_three);
          }
 
-       document.getElementById("choice_one").innerHTML = food_options_one[option_one];
+           document.getElementById("choice_one").innerHTML = food_options_one[option_one];
            document.getElementById("choice_two").innerHTML = food_options_two[option_two];
            document.getElementById("choice_three").innerHTML = food_options_three[option_three];
    }
@@ -67,7 +69,6 @@ body {
 
 /* Header/Blog Title */
 .header {
-  <img src="img/baby jumbo.png" alt="logo" />
   padding: 30px;
   text-align: center;
   background-color: #FAACA8;
@@ -78,6 +79,13 @@ body {
 	font-weight: 200;
 	font-size: 16px;
 	text-align: center;
+}
+
+.header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #555;
 }
 
 .header h1 {
@@ -175,7 +183,7 @@ body {
 <body>
 
 <div class="header">
-  <h1>Jumbowl</h1>
+  <img src="baby jumbo.png"> </img> <h1>Jumbowl</h1>
   <p>GET NOTIFIED ABOUT YOUR FAVORITE MEALS</p>
 </div>
 
