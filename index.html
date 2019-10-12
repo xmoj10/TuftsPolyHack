@@ -16,18 +16,21 @@
      updateMealOptionsHelper(meal);
    }
 
-   //
+   //inspiration from:
+   //https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+   //https://stackoverflow.com/questions/8674618/adding-options-to-select-with-javascript
    function updateMealOptionsHelper(meal) {
 
-      while (myNode.firstChild) {
-         myNode.removeChild(myNode.firstChild);
-       }
+      const options = document.getElementById("mealoptions");
+      while (options.firstChild) {
+         options.removeChild(options.firstChild);
+      }
 
      if (meal == "Breakfast") {
          var food =[eggs, apple, toast];
 
          for (int i = 0; i < food.length; i++) {
-
+             options.
          }
      } else if (meal == "Lunch") {
 
@@ -130,7 +133,7 @@ body {
 /* Change color on hover */
 .topnav a:hover {
   /* background-color: #ddd; */
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #8EC5FC;
   color: #8EC5FC;
 }
 
@@ -320,12 +323,10 @@ var firebaseConfig = {
                 Feeling Lucky?
             </h1>
             <!-- <p style="text-align: center; font-size:15px; padding-left: 7px; padding-right: 7px"> -->
-            <p style="text-align: center;font-size: 15px">
+            <p>
                 Generate a randomized meal below!</p>
           <!-- </div> -->
-            <button style="margin-bottom:20px; border-radius: 8px; width:150px;
-            background-color: #4CAF50; border: none; color: white; padding: 16px 32px;
-            text-decoration: none; cursor: pointer" onclick= createCombo(); ">
+            <button style="margin-bottom:20px; border-radius: 8px; width:150px;" onclick= createCombo(); >
                 Create a Meal Combo
             </button>
           <div style="width:90%; background-color: silver">
