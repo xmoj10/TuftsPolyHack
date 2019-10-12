@@ -12,6 +12,7 @@
 
    function updateMealOptions() {
      var meal = document.getElementById("mealtype").value;
+     window.alert("meal is: " + meal);
      updateMealOptionsHelper(meal);
    }
 
@@ -23,7 +24,7 @@
       options = document.getElementById("mealoptions");
 
       while (options.firstChild) {
-         options.removeChild(options.firstChild);
+         options.remove(options.firstChild);
       }
 
      if (meal == "Breakfast") {
@@ -33,8 +34,9 @@
            var opt = document.createElement('option');
            opt.value = "food #" + (i + 1);
            opt.innerHTML = food[i];
-           options.appendChild(opt);
+           options.add(opt);
          }
+         window.alert("tried to update to: breakfast");
      } else if (meal == "Lunch") {
 
        var food =[grilled cheese, hamburger, fries];
@@ -43,9 +45,9 @@
          var opt = document.createElement('option');
          opt.value = "food #" + (i + 1);
          opt.innerHTML = food[i];
-         options.appendChild(opt);
+         options.add(opt);
        }
-
+       window.alert("tried to update to: lunch");
      } else if (meal == "Dinner") {
        var food =[steak, potatoes];
 
@@ -53,8 +55,9 @@
          var opt = document.createElement('option');
          opt.value = "food #" + (i + 1);
          opt.innerHTML = food[i];
-         options.appendChild(opt);
+         options.add(opt);
        }
+       window.alert("tried to update to: dinner");
      } else if (meal == "Late night") {
 
        var food =[fries, burritos, pizza, mac and cheese];
@@ -63,9 +66,9 @@
          var opt = document.createElement('option');
          opt.value = "food #" + (i + 1);
          opt.innerHTML = food[i];
-         options.appendChild(opt);
+         options.add(opt);
        }
-
+       window.alert("tried to update to: dessert");
      }
    }
 
@@ -143,6 +146,7 @@ body {
 .topnav {
   overflow: hidden;
   background-color: #333;
+  border-bottom: thick double;
   border-bottom: 0.5px solid #8EC5FC;
   transition: border-bottom 0.5s;
 }
@@ -160,7 +164,6 @@ body {
 
 /* Change color on hover */
 .topnav a:hover {
-  /* background-color: #ddd; */
   border-bottom: 0.5px solid #8EC5FC;
   color: #8EC5FC;
 }
@@ -194,7 +197,7 @@ body {
 .card {
   background-color: white;
   padding: 20px;
-  margin-top: 5px;
+  margin-top: 25px;
   border-radius: 10px;
 }
 
@@ -293,13 +296,14 @@ var firebaseConfig = {
             <div class="card">
                 <h2>Choose your favorite foods</h2>
                 <h5>Choose a meal!</h5>
-                <select id="mealtype" onchange="udpateMealOptions()">
+                <select id="mealtype" onchange="updateMealOptions()">
                     <option value="Breakfast">Breakfast</option>
                     <option value="Lunch">Lunch</option>
                     <option value="Dinner">Dinner</option>
                     <option value="Late night">Late night</option>
                 </select>
                 <select id="mealoptions">
+                  <option value="Late night">IF YOU CAN SEE THIS THEN THATS NOT GOOD</option>
                 </select>
             </div>
 
@@ -342,7 +346,9 @@ var firebaseConfig = {
 
       <div class="rightcolumn">
         <div class="card">
-          <h2>About Us</h2>
+          <h2>
+              About Us
+          </h2>
           <!-- <div class="fakeimg"> -->
               <img src="us.jpg" style="width: 250px; height: 200px; align: center;"> </img>
 
@@ -388,25 +394,21 @@ var firebaseConfig = {
         </div>
 
         <div style="align:center; position:auto;">
-    	<br>
             Jumbowls (C) 2019
         </div>
+
+        <div>
+          <h2 align="center">
+              User Database
+              <br>
+          <input type = "text" placeHolder = "credit card num" id = "nameField">
+          <input type = "text" placeholder = "CVC" id = "ageField">
+          <button onclick = "writeData()">Submit</button>
+      </h2>
+        </div>
     </div>
-
-    <div>
-      <h2 align="center">
-          User Database
-          <br>
-      <input type = "text" placeHolder = "credit card num" id = "nameField">
-      <input type = "text" placeholder = "CVC" id = "ageField">
-      <button onclick = "writeData()">Submit</button>
-  </h2>
     </div>
-
-
-
-<!-- </div> -->
-
+</div>
 </body>
 
 </html>
