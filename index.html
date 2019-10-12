@@ -4,32 +4,56 @@
     <script>
 
 
-    function createCombo() {
+   function createCombo() {
 
-    		//var food_options = ["pizza", "apple", "cookie", "salad", "rice", "ice cream"];
-        var length = food_options.length;
+           //var food_options = ["pizza", "apple", "cookie", "salad", "rice", "ice cream"];
 
-        var option_one = Math.floor(Math.random() * length);
-    		var option_two = Math.floor(Math.random() * length);
-    		while (option_two == option_one) {
-    			 var option_two = Math.floor(Math.random() * length);
-    	  }
-    		var option_three = Math.floor(Math.random() * length);
-    		while (option_three == option_one || option_three == option_two) {
-    			 var option_three = Math.floor(Math.random() * length);
-    	  }
+       var x = document.getElementById("form1").value;
+       var y = document.getElementById("form2").value;
+       var z = document.getElementById("form3").value;
 
-        document.getElementById("choice_one").innerHTML = food_options[option_one];
-    		document.getElementById("choice_two").innerHTML = food_options[option_two];
-    		document.getElementById("choice_three").innerHTML = food_options[option_three];
-    }
+       var food_options_one[] = clean_string(x);
+       var food_options_two[] = clean_string(y);
+       var food_options_three[] = clean_string(z);
+
+       var length_one = food_options_one.length;
+       var length_two = food_options_two.length;
+       var length_three = food_options_three.length;
+
+       var option_one = Math.floor(Math.random() * length_one);
+           var option_two = Math.floor(Math.random() * length_two);
+           while (option_two == option_one) {
+                var option_two = Math.floor(Math.random() * length_two);
+         }
+           var option_three = Math.floor(Math.random() * length_three);
+           while (option_three == option_one || option_three == option_two) {
+                var option_three = Math.floor(Math.random() * length_three);
+         }
+
+       document.getElementById("choice_one").innerHTML = food_options_one[option_one];
+           document.getElementById("choice_two").innerHTML = food_options_two[option_two];
+           document.getElementById("choice_three").innerHTML = food_options_three[option_three];
+   }
 
 
-    //function clean_string(menu) {
+   function clean_string(str) {
+       var array[];
 
-    //}
+       var start = 0;
 
-    </script>
+               for (int i = 0; i < str.length; i++) {
+                   if (str[i] == " ") {
+               var temp = str.substring(start, i);
+               start = i + 1;
+                           array.push(temp);
+                       }
+               }
+
+       return array;
+   }
+
+   </script>
+
 <style>
 * {
   box-sizing: border-box;
@@ -150,7 +174,8 @@ body {
 <body>
 
 <div class="header">
-  <h1>JumboBowl</h1>
+  <h1>Jumbowl</h1>
+  <img scr=""
   <p>GET NOTIFIED ABOUT YOUR FAVORITE MEALS</p>
 </div>
 
