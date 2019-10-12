@@ -14,7 +14,7 @@
          window.alert("you chose: lunch");
        } else if (meal == "Dinner") {
 window.alert("you chose: dinner");
-       } else if (meal == "Dessert") {
+       } else if (meal == "Late night") {
          window.alert("you chose: dessert");
        }
 
@@ -76,6 +76,7 @@ body {
   font-style: normal;
   font-weight: 200;
   font-size: 20px;
+  padding: 15px;
 }
 
 .logo {
@@ -183,7 +184,7 @@ body {
 </style>
 </head>
 
-<body>
+<body class="all-header">
 <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
@@ -285,14 +286,16 @@ var firebaseConfig = {
           <p>Nobel Prize, please sponsor us.</p>
         </div>
 
-        <div style="display: flex; flex-direction: column;
+        <!-- <div style="display: flex; flex-direction: column;
         align-items: center; padding-top: 25px; padding-bottom: 25px; background-color: gray">
-          <div style="margin-bottom:20px;">
+          <div style="margin-bottom:20px;"> -->
+          <div class="card">
             <h1 style="text-align: center">
                 Feeling Lucky?
             </h1>
-            <p style="text-align: center; font-size:15px; padding-left: 7px; padding-right: 7px">Generate a randomized meal below!</p>
-          </div>
+            <p style="text-align: center; font-size:15px; padding-left: 7px; padding-right: 7px">
+                Generate a randomized meal below!</p>
+          <!-- </div> -->
             <button style="margin-bottom:20px; border-radius: 5px; width:150px" onclick="createCombo()">
                 Create a Meal Combo </button>
           <div style="width:90%; background-color: silver">
@@ -300,7 +303,7 @@ var firebaseConfig = {
             <p id="choice_two" style="text-align: center">Main Entree Here!</p>
             <p id="choice_three" style="text-align: center">Dessert Here!</p>
           </div>
-        </div>
+        <!-- </div> -->
     </div>
 </div>
 
@@ -309,7 +312,7 @@ var firebaseConfig = {
         <div style="links"> <button> <a href = "https://forms.gle/XkSwozmMW8W9ch2g7">
             Feedback? </a> </button> </div>
         <div style="align:center; position:auto;">
-    	<br text-align="center">  JumboBowls (C) 2019 </div>
+    	<br text-align="center">  Jumbowls (C) 2019 </div>
     </div>
 
     <div>
