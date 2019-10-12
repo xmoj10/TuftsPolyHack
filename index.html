@@ -308,29 +308,27 @@ var firebaseConfig = {
 <div class="leftcolumn">
             <div class="card">
 
-                <div style="float: left; width: 50%; padding-top:0px">
-                    Choose your favorite foods
-                <h5>
-                    Choose a meal!
-                </h5>
-                <select id="mealtype" onchange="onMealChange()">
-                    <option value="Breakfast">Breakfast</option>
-                    <option value="Lunch">Lunch</option>
-                    <option value="Dinner">Dinner</option>
-                    <option value="Late night">Late night</option>
-                </select>
-                <select id="mealoptions">
-                  <option value="Late night">
-                      Pulldown Menu
-                      <!-- IF YOU CAN SEE THIS THEN THATS NOT GOOD -->
-                   </option>
-                </select>
-            </div>
+                <div float="left" width="50%" align="center">
+                        Choose your favorite foods
+                        <h5>
+                            Choose a meal!
+                        </h5>
+                        <select id="mealtype" onchange="onMealChange()">
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Lunch">Lunch</option>
+                            <option value="Dinner">Dinner</option>
+                            <option value="Late night">Late night</option>
+                        </select>
+                        <select id="mealoptions">
+                            <option value="Late night">
+                                Pulldown Menu
+                            </option>
+                        </select>
+                </div>
 
-                <div style="float: right; width: 50%">
-                    <h2>
+                <div style="float: right; width: 50%;">
+                    <h2 align="center">
                         User Database
-                        <br>
                         <input type = "text" placeHolder = "Credit Card Number" id = "nameField">
                         <input type = "text" placeholder = "CVC" id = "ageField">
                         <button onclick="writeData()" align="center">
