@@ -89,6 +89,10 @@ body {
   background: transparent;
 }
 
+.logo-wrapper {
+  image-orientation: center;
+}
+
 .header h1 {
   font-size: 50px;
 }
@@ -184,9 +188,11 @@ body {
 <body>
 
 <div class="header">
-  <img src="baby jumbo.png">>
-   <h1>Test</h1>
-   <div class="logo-wrapper">
+    <h1>
+        <img src="baby jumbo.png"> </img>
+         Jumbowl
+    </h1>
+<div class="logo-wrapper">
      <img src="logo.png">
    </div>
   <p>GET NOTIFIED ABOUT YOUR FAVORITE MEALS</p>
@@ -237,7 +243,7 @@ body {
 	<br text-align="center">  JumboBowls (C) 2019 </div>
 </div>
 
-<form>
+
 	First Choice: <br>
 	<input id="form1" type="text" name="firstchoice"><br>
 
@@ -246,7 +252,7 @@ body {
 
 	Third Choice: <br>
 	<input id="form3" type="text" name="thirdchoice">
-</form>
+
 
 <button onclick="createCombo()"> click to create meal combo </button>
 
