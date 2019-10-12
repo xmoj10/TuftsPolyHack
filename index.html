@@ -21,7 +21,7 @@
    //https://stackoverflow.com/questions/8674618/adding-options-to-select-with-javascript
    function updateMealOptionsHelper(meal) {
 
-      const options = document.getElementById("mealoptions");
+      options = document.getElementById("mealoptions");
       while (options.firstChild) {
          options.removeChild(options.firstChild);
       }
@@ -30,7 +30,10 @@
          var food =[eggs, apple, toast];
 
          for (int i = 0; i < food.length; i++) {
-             options.
+           var opt = document.createElement('option');
+           opt.value = i;
+           opt.innerHTML = i;
+           select.appendChild(opt);
          }
      } else if (meal == "Lunch") {
 
