@@ -81,6 +81,14 @@ body {
   justify-content: space-between;
 }
 
+.left-elephant {
+  margin-left: 60px;
+}
+
+.right-elephant {
+  margin-right: 60px;
+}
+
 .header img {
   float: left;
   width: 100px;
@@ -135,9 +143,10 @@ body {
 
 /* Fake image */
 .fakeimg {
-  background-color: #aaa;
-  width: 100%;
   padding: 20px;
+  width: 100px;
+  height: 100px;
+  background: transparent;
 }
 
 /* Add a card effect for articles */
@@ -217,33 +226,33 @@ body {
 
 
   <!-- IGNORE THIS SHIT!!!!!!!!!!!!!! -->
-
-
-  <div class="all-header">
-  <div class="logo-wrapper">
-    <div class="logo">
-        <a href="#"> <img src ="logo.png"> </img> </a>
-    </div>
-  </div>
-
-  <div class="subtitle">
-    <div class="elephant">
-      <img src="baby jumbo.png" width="175px" height="175px"> </img>
-    </div>
-    <div class="sub-heading">
-      <h1>Get notified about your meals!</h1>
-    </div>
-    <div class="elephant">
-      <img src="baby jumbo.png" width="175px" height="175px"> </img>
-    </div>
-  </div>
-  </div>
-
-
+  <!-- IGNORE THIS SHIT!!!!!!!!!!!!!! -->
  <!-- IGNORE THIS SHIT!!!!!!!!!!!!!! -->
-<!-- IGNORE THIS SHIT!!!!!!!!!!!!!! -->
-<!-- IGNORE THIS SHIT!!!!!!!!!!!!!! -->
-<!-- IGNORE THIS SHIT!!!!!!!!!!!!!! -->
+ <!-- IGNORE THIS SHIT!!!!!!!!!!!!!! -->
+ <!-- IGNORE THIS SHIT!!!!!!!!!!!!!! -->
+ <!-- IGNORE THIS SHIT!!!!!!!!!!!!!! -->
+
+<div class="all-header">
+    <div class="logo-wrapper">
+        <div class="logo">
+            <a href="#"> <img src ="logo.png"> </img> </a>
+        </div>
+    </div>
+
+    <div class="subtitle">
+        <div class="left-elephant">
+            <img src="baby jumbo.png" width="175px" height="175px"> </img>
+        </div>
+        <div class="sub-heading">
+            <h1>Get notified about your meals!</h1>
+        </div>
+        <div class="right-elephant">
+            <img src="baby jumbo.png" width="175px" height="175px"> </img>
+        </div>
+    </div>
+</div>
+
+
 <!-- IGNORE THIS SHIT!!!!!!!!!!!!!! -->
 <!-- XAVIERS DO NOT TOUCH -->
 
@@ -259,12 +268,13 @@ body {
 </div>
 
 <div> -->
+Xavier's
 <div align="center">
     <img src="baby jumbo.png" width="175px" height="175px"> </img>
     <h1>Get notified about your meals!</h1>
     <img src="baby jumbo.png" width="175px" height="175px"> </img>
 </div>
-END OF DIV
+Xavier's
 <!-- IGNORE THIS SHIT!!!!!!!!!!!!!! -->
 <!-- IGNORE THIS SHIT!!!!!!!!!!!!!! -->
 <!-- IGNORE THIS SHIT!!!!!!!!!!!!!! -->
@@ -303,7 +313,9 @@ END OF DIV
     <div class="card">
       <h2>JUMBOS' FAVORITE DISHES</h2>
       <h5>Find out what other Jumbos enjoy.</h5>
-      <div class="fakeimg" style="height:200px;">Dish Image</div>
+      <div class="fakeimg">
+          Dish Image
+      </div>
       <p>While problematic, Tufts feed us decently most of the times. Hottest babes include
           General Gau's, Fried Chicken, Bibimbop, etc.</p>
     </div>
@@ -335,6 +347,10 @@ END OF DIV
 
     <div style="display: flex; flex-direction: column;
     align-items: center; padding-top: 25px; padding-bottom: 25px; background-color: gray">
+
+        <h1>Feeling Lucky?</h1>
+        <p>Generate a randomized meal below!</p>
+
         <button style="border-radius: 5px; width:150px" onclick="createCombo()">
             Create a Meal Combo </button>
 
