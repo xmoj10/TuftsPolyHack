@@ -2,6 +2,112 @@
 <html>
 <head>
 
+<script>
+
+   function onMealChange() {
+       window.alert("test");
+       updateMealOptions();
+   }
+
+   function updateMealOptions() {
+     var meal = document.getElementById("mealtype").value;
+
+     updateMealOptionsHelper(meal);
+   }
+
+   //inspiration from:
+   //https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+   //https://stackoverflow.com/questions/8674618/adding-options-to-select-with-javascript
+   function updateMealOptionsHelper(meal) {
+
+      options = document.getElementById("mealoptions");
+
+      while (options.firstChild) {
+         options.remove(options.firstChild);
+      }
+
+     if (meal == "Breakfast") {
+         var food =[eggs, apple, toast];
+
+         for (int i = 0; i < food.length; i++) {
+           var opt = document.createElement('option');
+           opt.value = "food #" + (i + 1);
+           opt.innerHTML = food[i];
+           options.add(opt);
+         }
+         window.alert("tried to update to: breakfast");
+     } else if (meal == "Lunch") {
+
+       var food =[grilled cheese, hamburger, fries];
+
+       for (int i = 0; i < food.length; i++) {
+         var opt = document.createElement('option');
+         opt.value = "food #" + (i + 1);
+         opt.innerHTML = food[i];
+         options.add(opt);
+       }
+       window.alert("tried to update to: lunch");
+     } else if (meal == "Dinner") {
+       var food =[steak, potatoes];
+
+       for (int i = 0; i < food.length; i++) {
+         var opt = document.createElement('option');
+         opt.value = "food #" + (i + 1);
+         opt.innerHTML = food[i];
+         options.add(opt);
+       }
+       window.alert("tried to update to: dinner");
+     } else if (meal == "Late night") {
+
+       var food =[fries, burritos, pizza, mac and cheese];
+
+       for (int i = 0; i < food.length; i++) {
+         var opt = document.createElement('option');
+         opt.value = "food #" + (i + 1);
+         opt.innerHTML = food[i];
+         options.add(opt);
+       }
+       window.alert("tried to update to: dessert");
+     }
+   }
+
+   function createCombo() {
+
+     //window.alert("test!");
+           //var food_options = ["pizza", "apple", "cookie", "salad", "rice", "ice cream"];
+
+       // var x = document.getElementById("form1").value;
+       // var y = document.getElementById("form2").value;
+       // var z = document.getElementById("form3").value;
+
+       var food_options_one = ["water", "apple juice", "soda", "spicy water"];
+       var food_options_two = ["chicken", "fish tacos", "beef tacos", "gaus"];
+       var food_options_three = ["brownie", "cookie", "cake", "ice cream"];
+       // var food_options_one = clean_string(x);
+       // var food_options_two = clean_string(y);
+       // var food_options_three = clean_string(z);
+
+       var length_one = food_options_one.length;   //food_options_one.length;
+       var length_two = food_options_two.length;   //food_options_two.length;
+       var length_three= food_options_three.length; //food_options_three.length;
+
+       var option_one = Math.floor(Math.random() * length_one);
+       var option_two = Math.floor(Math.random() * length_two);
+       while (option_two == option_one) {
+           var option_two = Math.floor(Math.random() * length_two);
+       }
+           var option_three = Math.floor(Math.random() * length_three);
+           while (option_three == option_one || option_three == option_two) {
+                var option_three = Math.floor(Math.random() * length_three);
+         }
+
+           document.getElementById("choice_one").innerHTML = "Drink:  " + food_options_one[option_one];
+           document.getElementById("choice_two").innerHTML = "Main entree:  " + food_options_two[option_two];
+           document.getElementById("choice_three").innerHTML = "Dessert:  " + food_options_three[option_three];
+   }
+
+   </script>
+
 <style>
 * {
   box-sizing: border-box;
@@ -24,11 +130,11 @@ body {
   padding: 15px;
 }
 
-/* .logo {
+.logo {
   display: block;
   align: center;
   width: 50%;
-} */
+}
 
 .subtitle {
   display: flex;
@@ -39,8 +145,6 @@ body {
 .topnav {
   overflow: hidden;
   background-color: #333;
-  border-bottom: 0.5px solid transparent;
-  transition: border-bottom 0.5s;
 }
 
 /* Style the topnav links */
@@ -55,29 +159,45 @@ body {
 }
 
 /* Change color on hover */
-.topnav a:hover {
-  border-bottom: 1px solid #8EC5FC;
+/* .topnav a:hover {
   color: #8EC5FC;
+} */
+
+.topnav a:before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #8EC5FC;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 
-.topnav a:hover:(.active) {
-  color: #8EC5FC;
-}
-#data{
-    margin-left: 150px;
-    /* align-content: right; */
+.topnav a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
 
-#meal {
-    margin-left: 100px;
-}
+/* .topnav a:hover:(.active) {
+  background-color: #FA709A;
+} */
+
 /* Create two unequal columns that floats next to each other */
 /* Left column */
 .leftcolumn {
   float: left;
   width: 75%;
 }
-
+.middlecolumn {
+  float: auto;
+  width: 37.5%
+}
 /* Right column */
 .rightcolumn {
   float: right;
@@ -89,18 +209,11 @@ body {
 .fakeimg {
   padding: 20px;
   width: 100%;
-  background: #ffffff;
+  background: #6e603c;
 }
 
 /* Add a card effect for articles */
 .card {
-  background-color: white;
-  padding: 10px;
-  margin-top: 25px;
-  border-radius: 10px;
-  display: flex;
-}
-.rightcard {
   background-color: white;
   padding: 20px;
   margin-top: 25px;
@@ -115,7 +228,7 @@ body {
 }
 
 .div {
-  border-radius: 8px;
+  border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
 }
@@ -125,9 +238,8 @@ body {
   padding: 20px;
   text-align: center;
   background-color: #FAACA8;
-  background-image: linear-gradient(19deg, #dba0d5 20%, #DDD6F3 87%);
+  background-image: linear-gradient(19deg, #FAACA8 20%, #DDD6F3 87%);
   margin-top: 20px;
-  border-radius: 10px;
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
@@ -148,12 +260,11 @@ body {
 </style>
 </head>
 
-<body class="all-header">
-
-<!-- onload= "updateMealOptions()"> -->
+<body class="all-header" onload="updateMealOptions()">
 <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
 <script>
 var firebaseConfig = {
    apiKey: "AIzaSyCiwIIAAkKVPA_1qOxfSlQO1c4yal1rv1o",
@@ -174,137 +285,22 @@ var firebaseConfig = {
            name: document.getElementById("nameField").value,
            age: document.getElementById("ageField").value
        });
+
    }
 </script>
-<script>
-      function onMealChange() {
-          updateMealOptions();
-      }
-
-      //inspiration from:
-      //https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
-      //https://stackoverflow.com/questions/8674618/adding-options-to-select-with-javascript
-      //https://stackoverflow.com/questions/12932959/remove-values-from-select-list-based-on-condition
-      function updateMealOptions() {
-
-        var meal = document.getElementById("mealtype").value;
-        //var options = document.getElementById("mealoptions");
-
-        // while (options.length > 0) {
-        //    options.remove(0);
-        // }
-
-       if (meal == "Breakfast") {
-           var food =[eggs, apple, toast];
-
-           // for (int i = 0; i < food.length; i++) {
-           //   var opt = document.createElement('option');
-           //   opt.value = "food #" + (i + 1);
-           //   opt.innerHTML = food[i];
-           //   document.getElementById("mealoptions").add(opt);
-           // }
-           window.alert("tried to update to: breakfast");
-       } else if (meal == "Lunch") {
-
-         var food = [grilled cheese, hamburger, fries];
-
-         // for (int i = 0; i < food.length; i++) {
-         //   var opt = document.createElement('option');
-         //   opt.value = "food #" + (i + 1);
-         //   opt.innerHTML = food[i];
-         //   document.getElementById("mealoptions").add(opt);
-         // }
-         window.alert("tried to update to: lunch");
-       } else if (meal == "Dinner") {
-         var food =[steak, potatoes];
-
-         // for (int i = 0; i < food.length; i++) {
-         //   var opt = document.createElement('option');
-         //   opt.value = "food #" + (i + 1);
-         //   opt.innerHTML = food[i];
-         //   document.getElementById("mealoptions").add(opt);
-         // }
-         window.alert("tried to update to: dinner");
-       } else if (meal == "Late night") {
-
-         var food =[fries, burritos, pizza, mac and cheese];
-
-         // for (int i = 0; i < food.length; i++) {
-         //   var opt = document.createElement('option');
-         //   opt.value = "food #" + (i + 1);
-         //   opt.innerHTML = food[i];
-         //   document.getElementById("mealoptions").add(opt);
-         // }
-         window.alert("tried to update to: dessert");
-       }
-
-      }
-</script>
-<script>
-      function createCombo() {
-
-        //window.alert("test!");
-              //var food_options = ["pizza", "apple", "cookie", "salad", "rice", "ice cream"];
-
-          // var x = document.getElementById("form1").value;
-          // var y = document.getElementById("form2").value;
-          // var z = document.getElementById("form3").value;
-
-          var food_options_one = ["water", "apple juice", "soda", "spicy water"];
-          var food_options_two = ["chicken", "fish tacos", "beef tacos", "gaus"];
-          var food_options_three = ["brownie", "cookie", "cake", "ice cream"];
-          // var food_options_one = clean_string(x);
-          // var food_options_two = clean_string(y);
-          // var food_options_three = clean_string(z);
-
-          var length_one = food_options_one.length;   //food_options_one.length;
-          var length_two = food_options_two.length;   //food_options_two.length;
-          var length_three= food_options_three.length; //food_options_three.length;
-
-          var option_one = Math.floor(Math.random() * length_one);
-          var option_two = Math.floor(Math.random() * length_two);
-          while (option_two == option_one) {
-              var option_two = Math.floor(Math.random() * length_two);
-          }
-              var option_three = Math.floor(Math.random() * length_three);
-              while (option_three == option_one || option_three == option_two) {
-                   var option_three = Math.floor(Math.random() * length_three);
-            }
-
-              document.getElementById("choice_one").innerHTML = "Drink:  " + food_options_one[option_one];
-              document.getElementById("choice_two").innerHTML = "Main entree:  " + food_options_two[option_two];
-              document.getElementById("choice_three").innerHTML = "Dessert:  " + food_options_three[option_three];
-      }
-
-</script>
-
-<!-- <div align="center">
-    <div class="all-header">
-      <div class="left-elephant">
-        <img src="baby jumbo.png" width="130px" height="130px" margin="right">
-      </div>
-      <div class="logo">
-        <a href="#"> <img src ="logo.png"></a>
-      </div>
-      <div class="right-elephant">
-        <img src="flip baby jumbo.png" width="130px" height="130px" margin="left">
-      </div>
-  </div> -->
 
 
-<!-- THIS IS THE TOP OF THE PAGE -->
 <div class="all-header">
     <div align="center" font-size="15px">
-        <a href="#"> <img src ="logo.png" width="35%" height="35%">  </a>
+        <a href="#"> <img src ="logo.png" width="35%" height="35%"> </img> </a>
             <h2 vertical-align="texttop">
-            <img src="baby jumbo.png" width="130px" height="130px" margin="right">
+            <img src="baby jumbo.png" width="130px" height="130px" margin="right"> </img>
             Get notified about your meals!
-            <img src="flip baby jumbo.png" width="130px" height="130px" margin="left">
+            <img src="flip baby jumbo.png" width="130px" height="130px" margin="left"> </img>
         </h2>
     </div>
 </div>
 
-<!-- THIS IS NAVIGATION -->
 <div class="topnav">
   <b><a href="http://menus.tufts.edu/foodpro.NET/location.aspx">   Favorite Meals  </a></b>
   <b><a href="https://dining.tufts.edu/where-to-eat">  Dining Halls    </a></b>
@@ -312,82 +308,113 @@ var firebaseConfig = {
   <b><a href="#" style="float:right">Settings</a></b>
 </div>
 
-
-
-<!-- Left Side -->
-<div class="leftcolumn">
-        <div class="card">
-            <div id="meal" float="left" width="50%">
+<!-- this is for under the logo area -->
+<div>
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card" style="float: left; width: 75%">
+                <h2>
                     Choose your favorite foods
-                    <h5>
-                        Choose a meal!
-                    </h5>
-                    <select id="mealtype" onchange="onMealChange()">
-                        <option value="Breakfast">Breakfast</option>
-                        <option value="Lunch">Lunch</option>
-                        <option value="Dinner">Dinner</option>
-                        <option value="Late night">Late night</option>
-                    </select>
-                    <select id="mealoptions">
-                        <option value="Late night">
-                            Pulldown Menu
-                        </option>
-                    </select>
+                </h2>
+                <h5>
+                    Choose a meal!
+                </h5>
+                <select id="mealtype" onchange="onMealChange()">
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                    <option value="Late night">Late night</option>
+                </select>
+                <select id="mealoptions">
+                  <option value="Late night">IF YOU CAN SEE THIS THEN THATS NOT GOOD</option>
+                </select>
             </div>
 
-            <div id="data" style="width: 50%; float:right;">
-                <h2 align= "center">
+            <div class="card" style="float: right; width: 25%">
+                <h2 align="center">
                     User Database
+                    <br>
+                <input type = "text" placeHolder = "credit card num" id = "nameField">
+                <input type = "text" placeholder = "CVC" id = "ageField">
+                <button onclick = "writeData()">Submit</button>
                 </h2>
-                <input type = "text" placeHolder = "Credit Card Number" id = "nameField">
-                    <input type = "text" placeholder = "CVC" id = "ageField">
-                        <button onclick="writeData()" align="center">
-                            Submit
-                        </button>
-                    </input>
-                </input>
+            </div>
+
+            <div class="card">
+              <h2>
+                Local Bites
+              </h2>
+              <h5>
+                  Here's a couple of local bites you should check out:
+              </h5>
+
+            <div class ="fakeimg">
+              <a href="https://www.bostonburgercompany.com/">
+                  <img src="420 burger.png" style="height: 150px; width: 150px;"> </img>
+              </a>
+                  <a href="https://www.kungfutea.com/">
+                  <img src="boba.png" style="height: 150px; width: 150px;"> </img>
+                    </a>
+            </div>
+
+              <p>If you are heading to Dewick, turn around and run uphills to Carm.</p>
+            </div>
+            
+            <div class="card">
+                <h2 align="center">
+                    JUMBOS' FAVORITE DISHES
+                </h2>
+                <h5>
+                    Find out what other Jumbos enjoy.
+                </h5>
+                <div class="fakeimg">
+                    Dish Image
+                </div>
+                <p>While problematic, Tufts feeds us decently most of the time. Hottest babes include
+                General Gau's, Fried Chicken, Bibimbop, etc.
+                </p>
             </div>
         </div>
+
+
+      <div class="rightcolumn">
+        <div class="card">
+          <h2>
+              About Us
+          </h2>
+          <!-- <div class="fakeimg"> -->
+              <img src="us.jpg" style="width: 250px; height: 200px; align: center;"> </img>
+
+          <p>We are struggling college students who understand how it feels to walk into Dewick
+              excited about General Gau's only to find out Tufts is only serving homophobia and racism.
+              We want other Jumbos to not suffer, and this website is dedicated to this purpose.</p>
+          <p>Nobel Prize, please sponsor us.</p>
+        </div>
+
+        <!-- <div style="display: flex; flex-direction: column;
+        align-items: center; padding-top: 25px; padding-bottom: 25px; background-color: gray">
+          <div style="margin-bottom:20px;"> -->
+          <div class="card" align="center">
+            <h1>
+                Feeling Lucky?
+            </h1>
+            <!-- <p style="text-align: center; font-size:15px; padding-left: 7px; padding-right: 7px"> -->
+            <p>
+                Generate a randomized meal below!</p>
+          <!-- </div> -->
+            <button style="margin-bottom:20px; border-radius: 8px; width:150px;" onclick= "createCombo()" >
+                Create a Meal Combo
+            </button>
+          <div style="width:90%; background-color: silver">
+            <p id="choice_one" style="text-align: center">Drink Here!</p>
+            <p id="choice_two" style="text-align: center">Main Entree Here!</p>
+            <p id="choice_three" style="text-align: center">Dessert Here!</p>
+          </div>
+        <!-- </div> -->
+    </div>
+    </div>
 </div>
-<!-- Right Side -->
-<div class="rightcolumn">
-            <div class="rightcard">
-
-                <h2>
-                    About Us
-                </h2>
-              <img src="us.jpg" style="width: 100%; height: 100%; align: center; border-radius: 10px">
-
-              <p>
-                  We are struggling college students who understand how it feels to walk into Dewick
-                  excited about General Gau's only to find out Tufts is only serving homophobia and racism.
-                  We want other Jumbos to not suffer, and the website is dedicated to this purpose.
-              </p>
-              <p>
-                  Nobel Prize, please sponsor us.
-              </p>
-            </div>
-
-            <div class="rightcard" align="center">
-                <h1>
-                    Feeling Lucky?
-                </h1>
-                <p>
-                    Generate a randomized meal below!
-                </p>
-                <button onclick="createCombo()">
-                    Create a Meal Combo
-                </button>
-
-                 <div style="width:90%; background-color: silver">
-                   <p id="choice_one" style="text-align: center">Drink Here!</p>
-                   <p id="choice_two" style="text-align: center">Main Entree Here!</p>
-                   <p id="choice_three" style="text-align: center">Dessert Here!</p>
-                 </div>
-             </div>
-</div>
-<div class="all-header">
-<div class="footer">
+    <div class="footer">
     	<h3>
             Give us Feedback:
         </h3>
@@ -412,12 +439,9 @@ var firebaseConfig = {
           <button onclick = "writeData()">Submit</button>
       </h2> -->
         </div>
+    </div>
 </div>
-</div>
-
-
-
-
 </body>
 
 </html>
+
